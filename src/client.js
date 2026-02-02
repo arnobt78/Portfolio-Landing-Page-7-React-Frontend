@@ -12,14 +12,24 @@ import {
 // Use mock data mode when Sanity credentials are not available
 const USE_MOCK_DATA = !process.env.REACT_APP_SANITY_PROJECT_ID;
 
+// Force mock data for now (remove this line later if you want to use Sanity)
+// eslint-disable-next-line no-console
+console.log('Mock Data Mode:', USE_MOCK_DATA, 'Project ID:', process.env.REACT_APP_SANITY_PROJECT_ID);
+
 export const client = USE_MOCK_DATA
   ? {
     fetch: (query) => new Promise((resolve) => {
       setTimeout(() => {
         // Parse the query to determine what data to return
+        // eslint-disable-next-line no-console
+        console.log('Fetching mock data for query:', query);
         if (query.includes('abouts')) {
+          // eslint-disable-next-line no-console
+          console.log('Returning mockAbouts:', mockAbouts.length, 'items');
           resolve(mockAbouts);
         } else if (query.includes('works')) {
+          // eslint-disable-next-line no-console
+          console.log('Returning mockWorks:', mockWorks.length, 'items');
           resolve(mockWorks);
         } else if (query.includes('skills')) {
           resolve(mockSkills);
