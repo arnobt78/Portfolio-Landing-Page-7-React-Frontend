@@ -19,6 +19,14 @@ module.exports = {
         quotes: 0,
       },
     },
+    {
+      files: ["src/client.js"],
+      rules: {
+        quotes: 0,
+        "operator-linebreak": 0,
+        "implicit-arrow-linebreak": 0,
+      },
+    },
   ],
   rules: {
     "react/function-component-definition": 0,
