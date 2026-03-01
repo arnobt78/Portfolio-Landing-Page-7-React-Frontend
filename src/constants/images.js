@@ -1,3 +1,4 @@
+// Static asset imports: Vite resolves these to URLs. Used by Header (profile, circle, logo), Navbar (logo), Footer (email, mobile).
 import email from '../assets/email.png';
 import mobile from '../assets/mobile.png';
 import api from '../assets/api.png';

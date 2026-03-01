@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+// HOC: adds a scroll-in animation (slide up + fade in) when the section enters the viewport.
+// Often composed with AppWrap: AppWrap(MotionWrap(Section, 'class'), 'id', 'wrapperClass').
 const MotionWrap = (Component, classNames) => function HOC() {
   return (
     <motion.div

@@ -1,3 +1,4 @@
+// About section cards: title, description, image (hotspot for cropping).
 export default{
     name:'abouts',
     title:'Abouts',

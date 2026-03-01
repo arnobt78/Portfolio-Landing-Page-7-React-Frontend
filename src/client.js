@@ -7,8 +7,9 @@ import {
   mockBrands,
 } from "./mockData";
 
-// Always use mock data so the app works without a Sanity backend (no CORS, no env).
+// In-memory data client: no backend required. Matches the shape of Sanity client (fetch/create) for drop-in use.
 const client = {
+  // Returns mock array based on query string (e.g. *[_type == "abouts"]). Used by About, Work, Skills, Testimonial.
   fetch: (query) =>
     new Promise((resolve) => {
       setTimeout(() => {
@@ -29,6 +30,7 @@ const client = {
         }
       }, 100);
     }),
+  // Mock contact form submit: returns a fake _id. Used by Footer contact form.
   create: () =>
     new Promise((resolve) => {
       setTimeout(() => {
@@ -39,4 +41,5 @@ const client = {
 
 export { client };
 
+// Image helper: in mock mode we pass URLs directly; urlFor is a no-op. Kept for API compatibility.
 export const urlFor = (source) => source;

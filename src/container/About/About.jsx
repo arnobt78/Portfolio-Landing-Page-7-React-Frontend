@@ -5,12 +5,12 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import './About.scss';
 import { urlFor, client } from '../../client';
 
+// About section: fetches about cards from client (mock data), renders grid with hover scale. Uses MotionWrap for scroll-in.
 const About = () => {
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "abouts"]';
-
     client.fetch(query).then((data) => {
       setAbouts(data);
     });
@@ -39,6 +39,7 @@ const About = () => {
   );
 };
 
+// Compose: MotionWrap adds scroll animation; AppWrap adds section id="about", layout, dots.
 export default AppWrap(
   MotionWrap(About, 'app__about'),
   'about',

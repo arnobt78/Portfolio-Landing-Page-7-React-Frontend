@@ -1,3 +1,4 @@
+// Testimonial entries: name, company, image, feedback text. Used in Testimonial carousel.
 export default {
     name:'testimonials',
     title:'Testimonials',

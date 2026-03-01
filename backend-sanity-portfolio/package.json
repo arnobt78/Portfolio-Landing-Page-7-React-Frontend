@@ -1,17 +1,19 @@
 {
-  "name": "backendsanityportfolio",
+  "name": "backend-sanity-portfolio",
   "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "package.json",
-  "author": "Mandeep Singhmar <msingh8328@gmail.com>",
-  "license": "UNLICENSED",
+  "description": "Sanity CMS backend for Portfolio Landing Page 7 - React, Vite frontend",
+  "author": "Arnob Mahmud <contact@arnobmahmud.com>",
+  "license": "MIT",
   "scripts": {
     "start": "sanity start",
     "build": "sanity build"
   },
   "keywords": [
-    "sanity"
+    "sanity",
+    "cms",
+    "portfolio",
+    "headless"
   ],
   "dependencies": {
     "@sanity/base": "^2.25.4",
@@ -30,6 +32,6 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:adrianhajdin/project_professional_portfolio.git"
+    "url": "git@github.com:arnobt78/portfolio-ui-7.git"
   }
 }

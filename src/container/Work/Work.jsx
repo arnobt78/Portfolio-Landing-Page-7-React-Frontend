@@ -6,6 +6,7 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Work.scss';
 
+// Portfolio section: list of works, filter by tag (All, UI/UX, Web App, etc.), hover overlay with view/code links.
 const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -14,13 +15,13 @@ const Work = () => {
 
   useEffect(() => {
     const query = '*[_type == "works"]';
-
     client.fetch(query).then((data) => {
       setWorks(data);
       setFilterWork(data);
     });
   }, []);
 
+  // Filter by tag: brief fade-out, then set filtered list and animate back in.
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
@@ -40,6 +41,7 @@ const Work = () => {
     <>
       <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
 
+      {/* Filter buttons: active class highlights selected; click filters works by work.tags. */}
       <div className="app__work-filter">
         {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
           <div

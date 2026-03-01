@@ -1,3 +1,4 @@
+// Nested type for experiences.works: job name, company, short description. Referenced in experiences schema.
 export default {
     name:'workExperience',
     title:'Work Experience',

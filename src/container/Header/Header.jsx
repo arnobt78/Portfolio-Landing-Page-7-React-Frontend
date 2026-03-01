@@ -5,6 +5,7 @@ import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./Header.scss";
 
+// Animation config for the floating tech circles: scale and fade in when in view.
 const scaleVariants = {
   whileInView: {
     scale: [0, 1],
@@ -16,6 +17,7 @@ const scaleVariants = {
   },
 };
 
+// Hero section: intro text, name, tags, profile image, and floating tech icons. Wrapped with AppWrap for id="home".
 const Header = () => (
   <div className="app__header app__flex">
     <motion.div

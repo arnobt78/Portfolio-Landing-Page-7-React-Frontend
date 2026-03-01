@@ -5,6 +5,7 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss';
 
+// Contact section: email/phone links + form. Submits via client.create() (mock returns fake id); then shows thank-you message.
 const Footer = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -21,6 +22,7 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  // Sends payload to client.create(); on success shows thank-you; on error just stops loading.
   const handleSubmit = () => {
     setLoading(true);
 

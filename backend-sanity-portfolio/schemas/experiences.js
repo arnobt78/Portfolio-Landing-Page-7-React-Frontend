@@ -1,3 +1,4 @@
+// Experience timeline: year + array of workExperience (name, company, desc). One document per year.
 export default{
     name:'experiences',
     title:'Experiences',

@@ -6,6 +6,7 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
 
+// Skills + experience timeline: skills grid (icon, name) and year-based experience list with tooltips (react-tooltip).
 const Skills = () => {
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
@@ -13,11 +14,9 @@ const Skills = () => {
   useEffect(() => {
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
-
     client.fetch(query).then((data) => {
       setExperiences(data);
     });
-
     client.fetch(skillsQuery).then((data) => {
       setSkills(data);
     });
@@ -55,6 +54,7 @@ const Skills = () => {
               <motion.div className="app__skills-exp-works">
                 {experience.works.map((work) => (
                   <React.Fragment key={work.name}>
+                    {/* Tooltip shows work.desc on hover; Tooltip component must have matching id. */}
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}

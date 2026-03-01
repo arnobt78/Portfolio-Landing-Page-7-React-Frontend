@@ -1,6 +1,5 @@
-// Mock data for portfolio sections
-// This replaces Sanity CMS data temporarily
-
+// Mock data for portfolio sections: used by src/client.js when no backend is configured.
+// Shape matches Sanity schema (abouts, works, skills, experiences, testimonials, brands) so components work unchanged.
 export const mockAbouts = [
   {
     title: 'Web Development',

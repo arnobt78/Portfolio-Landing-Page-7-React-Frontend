@@ -1,3 +1,4 @@
+// Contact form submissions: name, email, message. Frontend Footer posts here when using Sanity client.
 export default {
     name:'contact',
     title:'Contact',

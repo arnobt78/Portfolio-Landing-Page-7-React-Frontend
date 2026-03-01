@@ -1,6 +1,8 @@
 import React from "react";
 import { NavigationDots, SocialMedia } from "../components";
 
+// HOC: wraps a section with shared layout — section id (for #hash nav), SocialMedia sidebar, copyright, NavigationDots.
+// Usage: export default AppWrap(MySection, 'sectionId', 'optionalClassNames');
 const AppWrap = (Component, idName, classNames) => {
   function HOC() {
     return (

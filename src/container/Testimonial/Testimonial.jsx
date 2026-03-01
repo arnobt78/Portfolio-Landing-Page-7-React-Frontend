@@ -6,6 +6,7 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Testimonial.scss';
 
+// Testimonials carousel: one testimonial at a time, prev/next buttons; brand logos below. Data from client (testimonials + brands).
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
@@ -43,6 +44,7 @@ const Testimonial = () => {
             </div>
           </div>
 
+          {/* Prev/next: wrap around (first -> last, last -> first). */}
           <div className="app__testimonial-btns app__flex">
             <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
               <HiChevronLeft />

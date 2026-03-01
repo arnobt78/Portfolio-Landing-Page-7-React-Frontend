@@ -1,3 +1,4 @@
+// Sanity v2 schema: registers all document types used by the portfolio (works, abouts, skills, etc.).
 // First, we must import the schema creator
 import createSchema from 'part:@sanity/base/schema-creator'
 

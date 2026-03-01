@@ -1,3 +1,4 @@
+// Brand logos (name + image). Shown below testimonials in frontend.
 export default{
     name:'brands',
     title:'Brands',

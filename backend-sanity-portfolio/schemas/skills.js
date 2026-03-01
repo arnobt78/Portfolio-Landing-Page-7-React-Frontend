@@ -1,3 +1,4 @@
+// Skills list: name, background color, icon image. Rendered as grid in frontend Skills section.
 export default{
     name:'skills',
     title:'Skills',

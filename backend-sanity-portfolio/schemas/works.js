@@ -1,3 +1,4 @@
+// Portfolio items: title, description, project/code links, image, tags array (for filtering in frontend).
 export default {
     name: 'works',
     title: 'Works',
