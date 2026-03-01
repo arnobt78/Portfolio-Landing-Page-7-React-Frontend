@@ -1,12 +1,12 @@
-# Portfolio Landing Page 7 - React, Vite, Tailwind Frontend Project
-
-A single-page portfolio template built with **React** and **Vite**, featuring smooth animations, section-based layout, and mock data so you can run and deploy without any backend. Use it as a learning resource, a starter for your own portfolio, or a reference for React patterns, HOCs, and Framer Motion.
+# Portfolio Landing Page 7 - React, Vite, TailwindCSS Frontend Project
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19.2.4-blue)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7.1.3-green)](https://vite.dev/)
 [![SASS](https://img.shields.io/badge/SASS-1.97.3-cc6699)](https://sass-lang.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12.34.0-purple)](https://www.framer.com/motion/)
+
+A single-page portfolio template built with **React** and **Vite**, featuring smooth animations, section-based layout, and mock data so you can run and deploy without any backend. Use it as a learning resource, a starter for your own portfolio, or a reference for React patterns, HOCs, and Framer Motion.
 
 - **Live Demo:** [https://portfolio-ui-7.vercel.app/](https://portfolio-ui-7.vercel.app/)
 
@@ -39,15 +39,15 @@ This is a **React + Vite** frontend project (not Create React App). It is a one-
 
 ## Tech Stack & Keywords
 
-| Category   | Technologies / Terms |
-|-----------|----------------------|
-| **Framework** | React 19, Vite 7 |
-| **Styling**   | SASS (SCSS) |
-| **Animation** | Framer Motion |
-| **Icons**     | react-icons |
+| Category      | Technologies / Terms                 |
+| ------------- | ------------------------------------ |
+| **Framework** | React 19, Vite 7                     |
+| **Styling**   | SASS (SCSS)                          |
+| **Animation** | Framer Motion                        |
+| **Icons**     | react-icons                          |
 | **Data**      | In-memory mock (no backend required) |
-| **Linting**   | ESLint (Airbnb + React) |
-| **Deploy**    | Vercel (output: `dist`) |
+| **Linting**   | ESLint (Airbnb + React)              |
+| **Deploy**    | Vercel (output: `dist`)              |
 
 **Keywords:** portfolio, React, Vite, single-page, mock data, Framer Motion, SASS, HOC, section navigation, contact form, testimonials, skills, works filter.
 
@@ -55,7 +55,7 @@ This is a **React + Vite** frontend project (not Create React App). It is a one-
 
 ## Project Structure
 
-```
+```bash
 portfolio-ui-7/
 ├── index.html              # Vite entry HTML (root)
 ├── vite.config.js          # Vite + React plugin config
@@ -115,7 +115,7 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:5173** (or the URL Vite prints).
+Open **<http://localhost:5173>** (or the URL Vite prints).
 
 ### Build & Preview
 
@@ -148,12 +148,12 @@ cp .env.example .env
 
 **.env.example** documents optional variables (currently unused in code):
 
-| Variable | Purpose |
-|----------|--------|
-| `VITE_USE_MOCK_DATA` | Force mock data (e.g. `true`) |
-| `VITE_USE_SANITY` | Opt-in to Sanity in production (e.g. `true`) |
-| `VITE_SANITY_PROJECT_ID` | Sanity project ID (for future use) |
-| `VITE_SANITY_TOKEN` | Sanity token (for future use) |
+| Variable                 | Purpose                                      |
+| ------------------------ | -------------------------------------------- |
+| `VITE_USE_MOCK_DATA`     | Force mock data (e.g. `true`)                |
+| `VITE_USE_SANITY`        | Opt-in to Sanity in production (e.g. `true`) |
+| `VITE_SANITY_PROJECT_ID` | Sanity project ID (for future use)           |
+| `VITE_SANITY_TOKEN`      | Sanity token (for future use)                |
 
 **Important:** Only variables prefixed with `VITE_` are exposed to the client bundle in Vite. Do not put secrets in `VITE_*` if they must stay server-only.
 
@@ -228,18 +228,18 @@ Data lives in **`src/mockData.js`**: `mockAbouts`, `mockWorks`, `mockSkills`, `m
 
 ## Features & Functionalities
 
-| Feature | Where | Description |
-|--------|--------|-------------|
-| **Single-page navigation** | Navbar, NavigationDots | Anchor links to sections by `id`. |
-| **Responsive navbar** | Navbar | Hamburger menu on small screens; slide-in list. |
-| **Header** | Header | Intro line, name, tags, profile image, floating tech circles. |
-| **About** | About | Cards (title, description, image) from mock `abouts`. |
-| **Work / Portfolio** | Work | Grid of projects; filter by **All**, **UI/UX**, **Web App**, **Mobile App**, **React JS**. Each item: image, title, description, tag, links (view / code). |
-| **Skills & Experience** | Skills | List of skills (icon, name) and timeline of experiences (year, works with name, company); tooltips on work items via `react-tooltip`. |
-| **Testimonials** | Testimonial | One testimonial at a time; prev/next buttons; brand logos below. |
-| **Contact** | Footer | Email/phone links; form (name, email, message). Submit calls `client.create()` and shows a thank-you state (no real backend). |
-| **Animations** | Framer Motion | Scroll-in and hover effects in sections and cards. |
-| **SEO** | index.html | Meta title, description, author, keywords, Open Graph, Twitter Card, canonical URL. |
+| Feature                    | Where                  | Description                                                                                                                                                |
+| -------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Single-page navigation** | Navbar, NavigationDots | Anchor links to sections by `id`.                                                                                                                          |
+| **Responsive navbar**      | Navbar                 | Hamburger menu on small screens; slide-in list.                                                                                                            |
+| **Header**                 | Header                 | Intro line, name, tags, profile image, floating tech circles.                                                                                              |
+| **About**                  | About                  | Cards (title, description, image) from mock `abouts`.                                                                                                      |
+| **Work / Portfolio**       | Work                   | Grid of projects; filter by **All**, **UI/UX**, **Web App**, **Mobile App**, **React JS**. Each item: image, title, description, tag, links (view / code). |
+| **Skills & Experience**    | Skills                 | List of skills (icon, name) and timeline of experiences (year, works with name, company); tooltips on work items via `react-tooltip`.                      |
+| **Testimonials**           | Testimonial            | One testimonial at a time; prev/next buttons; brand logos below.                                                                                           |
+| **Contact**                | Footer                 | Email/phone links; form (name, email, message). Submit calls `client.create()` and shows a thank-you state (no real backend).                              |
+| **Animations**             | Framer Motion          | Scroll-in and hover effects in sections and cards.                                                                                                         |
+| **SEO**                    | index.html             | Meta title, description, author, keywords, Open Graph, Twitter Card, canonical URL.                                                                        |
 
 ---
 
@@ -247,9 +247,9 @@ Data lives in **`src/mockData.js`**: `mockAbouts`, `mockWorks`, `mockSkills`, `m
 
 - **Backend:** None required. The app is frontend-only and uses mock data. The optional `backend_sanity_portfolio/` folder contains Sanity schemas for reference only; the running app does not call Sanity.
 
-- **Deployment (Vercel):**  
-  - Build: `npm run build`  
-  - Output: `dist`  
+- **Deployment (Vercel):**
+  - Build: `npm run build`
+  - Output: `dist`
   - Config: `vercel.json` sets `framework`, `buildCommand`, and `outputDirectory`. No env vars are required for the current mock setup.
 
 ---
@@ -259,7 +259,7 @@ Data lives in **`src/mockData.js`**: `mockAbouts`, `mockWorks`, `mockSkills`, `m
 ### Using the data client in a container
 
 ```jsx
-import { client, urlFor } from '../../client';
+import { client, urlFor } from "../../client";
 
 useEffect(() => {
   client.fetch('*[_type == "abouts"]').then((data) => {
