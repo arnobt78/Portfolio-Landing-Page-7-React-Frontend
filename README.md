@@ -25,6 +25,7 @@ A single-page portfolio template built with **React** and **Vite**, featuring sm
 - [Features & Functionalities](#features--functionalities)
 - [Backend & Deployment](#backend--deployment)
 - [Code Snippets](#code-snippets)
+- [Keywords](#keywords)
 - [Conclusion](#conclusion)
 - [License](#license)
 
@@ -286,6 +287,12 @@ export default AppWrap(
 ### Adding a new nav item
 
 In **Navbar** and **NavigationDots**, add the same id to the list (e.g. `'mysection'`). In the container, use `AppWrap(Component, 'mysection', ...)` so the section has `id="mysection"`.
+
+---
+
+## Keywords
+
+portfolio, React, Vite, single-page application, mock data, Framer Motion, SASS, HOC, section navigation, contact form, testimonials, skills, works filter, frontend, developer portfolio, open source, headless CMS, Sanity.
 
 ---
 
