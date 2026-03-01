@@ -14,8 +14,7 @@ const nodeEnv = typeof process !== "undefined" ? process.env || {} : {};
 
 const getEnv = (viteKey, legacyKey) => viteEnv[viteKey] ?? nodeEnv[legacyKey];
 
-// Use mock data mode when Sanity credentials are not available
-// Or explicitly forced via VITE_USE_MOCK_DATA / REACT_APP_USE_MOCK_DATA=true
+// Use mock data when: forced by env, no Sanity credentials, or production (e.g. Vercel without backend)
 const FORCE_MOCK_DATA =
   getEnv("VITE_USE_MOCK_DATA", "REACT_APP_USE_MOCK_DATA") === "true";
 const SANITY_PROJECT_ID = getEnv(
@@ -23,7 +22,13 @@ const SANITY_PROJECT_ID = getEnv(
   "REACT_APP_SANITY_PROJECT_ID",
 );
 const SANITY_TOKEN = getEnv("VITE_SANITY_TOKEN", "REACT_APP_SANITY_TOKEN");
-const USE_MOCK_DATA = FORCE_MOCK_DATA || !SANITY_PROJECT_ID;
+const isProduction = typeof import.meta !== "undefined" && import.meta.env?.PROD;
+const useSanityInProduction =
+  getEnv("VITE_USE_SANITY", "REACT_APP_USE_SANITY") === "true";
+const USE_MOCK_DATA =
+  FORCE_MOCK_DATA ||
+  !SANITY_PROJECT_ID ||
+  (isProduction && !useSanityInProduction);
 
 const mockClient = {
   fetch: (query) =>
@@ -54,17 +59,22 @@ const mockClient = {
     }),
 };
 
-const sanityConfiguredClient = createClient({
-  projectId: SANITY_PROJECT_ID,
-  dataset: "production",
-  apiVersion: "2022-02-01",
-  useCdn: true,
-  token: SANITY_TOKEN,
-});
+const sanityConfiguredClient = !USE_MOCK_DATA
+  ? createClient({
+    projectId: SANITY_PROJECT_ID,
+    dataset: "production",
+    apiVersion: "2022-02-01",
+    useCdn: true,
+    token: SANITY_TOKEN,
+  })
+  : null;
 
 export const client = USE_MOCK_DATA ? mockClient : sanityConfiguredClient;
 
-const builder = USE_MOCK_DATA ? null : imageUrlBuilder(client);
+const builder =
+  USE_MOCK_DATA || !sanityConfiguredClient
+    ? null
+    : imageUrlBuilder(sanityConfiguredClient);
 
 export const urlFor = (source) => {
   // If using mock data, return the source directly (it's already a URL)
