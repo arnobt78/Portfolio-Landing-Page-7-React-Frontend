@@ -14,7 +14,10 @@ const nodeEnv = typeof process !== "undefined" ? process.env || {} : {};
 
 const getEnv = (viteKey, legacyKey) => viteEnv[viteKey] ?? nodeEnv[legacyKey];
 
-// Use mock data when: forced by env, no Sanity credentials, or production (e.g. Vercel without backend)
+// In production (e.g. Vercel) we always use mock data so the site works without a backend.
+// In development, use Sanity only if credentials are set in .env.
+const isProduction =
+  typeof import.meta !== "undefined" && import.meta.env?.PROD === true;
 const FORCE_MOCK_DATA =
   getEnv("VITE_USE_MOCK_DATA", "REACT_APP_USE_MOCK_DATA") === "true";
 const SANITY_PROJECT_ID = getEnv(
@@ -22,13 +25,9 @@ const SANITY_PROJECT_ID = getEnv(
   "REACT_APP_SANITY_PROJECT_ID",
 );
 const SANITY_TOKEN = getEnv("VITE_SANITY_TOKEN", "REACT_APP_SANITY_TOKEN");
-const isProduction = typeof import.meta !== "undefined" && import.meta.env?.PROD;
-const useSanityInProduction =
-  getEnv("VITE_USE_SANITY", "REACT_APP_USE_SANITY") === "true";
+
 const USE_MOCK_DATA =
-  FORCE_MOCK_DATA ||
-  !SANITY_PROJECT_ID ||
-  (isProduction && !useSanityInProduction);
+  isProduction || FORCE_MOCK_DATA || !SANITY_PROJECT_ID;
 
 const mockClient = {
   fetch: (query) =>
