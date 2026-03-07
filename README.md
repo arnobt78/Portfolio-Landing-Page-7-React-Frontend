@@ -10,7 +10,7 @@ A single-page portfolio template built with **React** and **Vite**, featuring sm
 
 - **Live Demo:** [https://portfolio-ui-7.vercel.app/](https://portfolio-ui-7.vercel.app/)
 
----
+<img width="1900" height="944" alt="Screenshot 2026-03-07 at 11 51 53" src="https://github.com/user-attachments/assets/e4e88aea-4ff8-4ead-82d9-bf39f6c99a0e" /> <img width="1892" height="948" alt="Screenshot 2026-03-07 at 11 52 10" src="https://github.com/user-attachments/assets/a42090a7-c9a7-4415-bd89-0173c6c9c3e2" /> <img width="1874" height="851" alt="Screenshot 2026-03-07 at 11 52 21" src="https://github.com/user-attachments/assets/a3d06947-5293-4af5-9395-b71c2820e727" /> <img width="1875" height="856" alt="Screenshot 2026-03-07 at 11 52 34" src="https://github.com/user-attachments/assets/03351620-f1a1-47f3-8db7-82a9d59f452c" /> <img width="1887" height="893" alt="Screenshot 2026-03-07 at 11 52 46" src="https://github.com/user-attachments/assets/86f9de87-dca4-49ca-b247-65dd415520cf" /> <img width="1889" height="953" alt="Screenshot 2026-03-07 at 11 52 57" src="https://github.com/user-attachments/assets/3a407b9e-5c50-4189-a79d-4bbf79b4f219" />
 
 ## Table of Contents
 
